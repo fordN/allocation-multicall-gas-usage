@@ -1,0 +1,17 @@
+{
+  "name": "allocation-multicall-gas-usage",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "build-ipfs": "graph build --ipfs http://127.0.0.1:5001",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ fordn/allocation-multicall-gas-usage",
+    "create-local": "graph create --node http://localhost:8020/ fordn/allocation-multicall-gas-usage",
+    "remove-local": "graph remove --node http://localhost:8020/ fordn/allocation-multicall-gas-usage",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 fordn/allocation-multicall-gas-usage"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.32.0",
+    "@graphprotocol/graph-ts": "0.27.0"
+  }
+}

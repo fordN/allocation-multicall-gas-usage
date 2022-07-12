@@ -1,0 +1,31 @@
+type Multicall @entity {
+  id: ID!
+  indexer: Indexer!
+  allocateCount: BigInt!
+  unallocateCount: BigInt!
+  reallocateCount: BigInt!
+  actionsCount: BigInt!
+  gasUsed: BigInt!
+  legacyGasUsed: BigInt!
+  gasSaved: BigInt!
+  gasSavedPercentage: BigInt!
+}
+
+type Indexer @entity {
+  id: ID!
+  allocatesBundled: BigInt!
+  unallocatesBundled: BigInt!
+  reallocatesBundled: BigInt!
+
+  totalActionsBundled: BigInt!
+  totalGasUsed: BigInt!
+  totalLegacyGasUsed: BigInt!
+  totalGasSaved: BigInt!
+
+  multicallTransactions: BigInt!
+  multicalls: [Multicall!]! @derivedFrom(field: "indexer")
+
+#  totalGasSaved: BigInt!
+#  averageNumberActionsPerMulticall: BigInt
+#  averageGasSavedPerMulticall: BigInt
+}
