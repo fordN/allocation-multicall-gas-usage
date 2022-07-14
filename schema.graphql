@@ -1,5 +1,6 @@
 type Multicall @entity {
   id: ID!
+  blockNumber: BigInt!
   indexer: Indexer!
   allocateCount: BigInt!
   unallocateCount: BigInt!
@@ -8,7 +9,7 @@ type Multicall @entity {
   gasUsed: BigInt!
   legacyGasUsed: BigInt!
   gasSaved: BigInt!
-  gasSavedPercentage: BigInt!
+  gasReduction: BigDecimal!
 }
 
 type Indexer @entity {
@@ -21,11 +22,10 @@ type Indexer @entity {
   totalGasUsed: BigInt!
   totalLegacyGasUsed: BigInt!
   totalGasSaved: BigInt!
+  gasReduction: BigDecimal!
+  avgNumActionsPerMulticall: BigDecimal!
+  avgGasSavedPerMulticall: BigDecimal!
 
   multicallTransactions: BigInt!
   multicalls: [Multicall!]! @derivedFrom(field: "indexer")
-
-#  totalGasSaved: BigInt!
-#  averageNumberActionsPerMulticall: BigInt
-#  averageGasSavedPerMulticall: BigInt
 }
