@@ -8,10 +8,14 @@
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ fordn/allocation-multicall-gas-usage",
     "create-local": "graph create --node http://localhost:8020/ fordn/allocation-multicall-gas-usage",
     "remove-local": "graph remove --node http://localhost:8020/ fordn/allocation-multicall-gas-usage",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 fordn/allocation-multicall-gas-usage"
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 fordn/allocation-multicall-gas-usage",
+    "prettier": "prettier --write src/*.ts"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.32.0",
     "@graphprotocol/graph-ts": "0.27.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
   }
 }
